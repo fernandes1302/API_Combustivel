@@ -6,7 +6,8 @@ class FuelStationController {
     this.fuelStationRepositoty = new FuelStationRepositoty();
   }
 
-  async createFullStation(request) {
+  async createFuelStation(request) {
+    //console.log(request.body);
     const fuelStation = new FuelStation(request.body);
     const fuelStationCurrent = await this.fuelStationRepositoty.save(fuelStation);
 
