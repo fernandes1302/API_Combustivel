@@ -4,8 +4,9 @@ let model = null;
 let schemaFuel = null;
 
 class Fuel {
-    constructor ({_id, id, price, active, updateAt, fuelStation}) {
+    constructor ({_id, id, name, price, active, updateAt, fuelStation}) {
         this.id = _id || id || null;
+        this.name = name || null;
         this.price = price || null;
         this.active = active;
         this.updateAt = updateAt || null;
@@ -14,6 +15,11 @@ class Fuel {
 
     setId(id) {
         this.id = id;
+        return this;
+    }
+
+    setNome(name) {
+        this.name = name;
         return this;
     }
 
@@ -44,6 +50,7 @@ class Fuel {
             schemaFuel = new Schema({
                 createdAt: { type: Date, default: Date.now},
                 updateAt: {type: Date},
+                name: {type: String, required: [true, '{PATH} is required!'] },
                 price: {type: Number, required:[true, '{PATH} is required!']},
                 active: {type: Boolean, required:[true, '{PATH} is required!']},
                 fuelStation: {type: Schema.Types.ObjectId, required:[true, '{PATH} is required!']}
