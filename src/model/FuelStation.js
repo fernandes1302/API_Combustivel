@@ -18,7 +18,7 @@ class FuelStation {
     }
 
     setName(name) {
-        this.neme = name;
+        this.name = name;
         return this;
     }
 
