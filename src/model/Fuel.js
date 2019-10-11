@@ -18,7 +18,7 @@ class Fuel {
         return this;
     }
 
-    setNome(name) {
+    setName(name) {
         this.name = name;
         return this;
     }
